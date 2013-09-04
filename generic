@@ -1,0 +1,11 @@
+# macro definition for a generic virtual host
+<Macro generic $fqdn>
+    <VirtualHost *:80>
+        ServerName $fqdn
+        DocumentRoot /var/www/$fqdn
+
+#        ErrorLog /var/log/apache2/$fqdn/error_log
+ #       CustomLog /var/log/apache2/$fqdn/access_log common
+  #      php_admin_value error_log "/var/log/apache2/$fqdn/php_error_log"
+    </VirtualHost>
+</Macro>

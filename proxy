@@ -1,0 +1,27 @@
+<Macro proxy-domain $fqdn $port>
+    <VirtualHost *:80>
+        ServerName $fqdn
+
+	ProxyPass / http://localhost:$port/
+    	ProxyPassReverse / http://localhost:$port/
+    </VirtualHost>
+</Macro>
+
+<Macro proxy-angel $fqdn $port>
+    <VirtualHost *:80>
+        ServerName $fqdn
+
+        ProxyPass / http://192.168.1.105:$port/
+        ProxyPassReverse / http://192.168.1.105:$port/
+    </VirtualHost>
+</Macro>
+
+<Macro proxy-other $fqdn $ip $port>
+    <VirtualHost *:80>
+        ServerName $fqdn
+
+        ProxyPass / http://$ip:$port/
+        ProxyPassReverse / http://$ip:$port/
+    </VirtualHost>
+</Macro>
+
