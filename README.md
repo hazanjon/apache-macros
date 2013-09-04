@@ -7,24 +7,48 @@ You will need to add the following line to your apache config file above where y
     # Include macros
     Include <macro folder>
 
-Example installation for Ubuntu 12.04
+## Usage
 
-Clone the Repo
+Add the following to your vhost file
+
+```
+Use generic mydomain.com
+```
+
+This will create a vhost that serves up /var/www/mydomain.com on port 80
+
+
+## Example installation for Ubuntu 12.04
+
+### Clone the Repo
 
 ```
 git clone https://github.com/hazanjon/apache-macros.git /etc/apache2/sites-macros
 ```
-   
-Edit Apache Config
+
+### Enable Macros in Apache
+```
+apt-get install libapache2-mod-macro
+a2enmod macro
+/etc/init.d/apache2 restart
+```
+
+### Edit Apache Config
 
 ```
 vi /etc/apache2/apache2.conf
 ```
-Add the following line
+
+At he bottom of the config file add
 
     Include sites-macros/
   
 Above the following line
 
-    # Include the virtual host configurations:
     Include sites-enabled/
+    
+### Reload Apache
+```
+/etc/init.d/apache2 reload
+```
+
