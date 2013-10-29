@@ -41,7 +41,7 @@ vi /etc/apache2/apache2.conf
 
 At he bottom of the config file add
 
-    Include sites-macros/
+    Include sites-macros/*.conf
   
 Above the following line
 
