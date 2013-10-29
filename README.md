@@ -5,7 +5,7 @@ This is a collection of vhsot macros that i'm slowly building
 You will need to add the following line to your apache config file above where your vhosts are loaded
 
     # Include macros
-    Include <macro folder>
+    Include <macro folder>/*.conf
 
 ## Usage
 
