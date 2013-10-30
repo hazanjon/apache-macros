@@ -26,10 +26,11 @@ This will create a vhost that serves up /var/www/mydomain.com on port 80
 git clone https://github.com/hazanjon/apache-macros.git /etc/apache2/sites-macros
 ```
 
-### Enable Macros in Apache
+### Enable Macros & Proxy in Apache
 ```
 apt-get install libapache2-mod-macro
 a2enmod macro
+a2enmod proxy_http
 /etc/init.d/apache2 restart
 ```
 
